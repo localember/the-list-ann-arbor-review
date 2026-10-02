@@ -1,0 +1,4 @@
+# never publish client contact exports or intake material
+contacts/
+*.csv
+intake*/
