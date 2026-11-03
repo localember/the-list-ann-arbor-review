@@ -127,9 +127,10 @@ p{margin:0 0 1em}
 .odds{font-family:var(--serif);font-size:18px;font-weight:400;color:var(--navy);margin-top:30px}
 
 /* featured strip */
-.featured{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-.feature{background:var(--cream-hi);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column}
-.feature-art{aspect-ratio:4/3;background:linear-gradient(160deg,#F3E2CA,#EAD3B2);display:grid;place-items:center;position:relative}
+.featured{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.feature{background:var(--cream-hi);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.feature-art{aspect-ratio:4/3;background:#fff;position:relative;min-width:0;overflow:hidden}
+.feature-art img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
 .feature-art svg{width:68px;height:68px}
 .chip{position:absolute;top:12px;left:12px;background:rgba(255,248,240,.92);color:var(--gold-text);font:600 11.5px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;padding:7px 10px;border-radius:999px}
 .feature-body{padding:20px 20px 22px}
@@ -210,7 +211,7 @@ p{margin:0 0 1em}
 
 /* ---------- responsive ---------- */
 @media (max-width:1020px){
-  .featured{grid-template-columns:repeat(2,1fr)}
+  .featured{grid-template-columns:repeat(2,minmax(0,1fr))}
   .quotes{grid-template-columns:1fr;max-width:640px;margin:0 auto}
 }
 @media (max-width:900px){
@@ -239,7 +240,7 @@ p{margin:0 0 1em}
   .header-row{min-height:72px;padding-top:12px;padding-bottom:12px}
   .brand img{width:70px}
   .form-grid{grid-template-columns:1fr}
-  .featured{grid-template-columns:1fr 1fr;gap:12px}
+  .featured{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
   .feature-body{padding:14px 14px 16px}
   .feature-body p{font-size:13.5px}
   .feature-art svg{width:48px;height:48px}
