@@ -43,20 +43,26 @@
   </div>
 </header>
 <main id="main">
-<section class="hero" aria-labelledby="h1" style="padding-bottom:clamp(56px,8vw,96px)">
+<section class="hero" aria-labelledby="h1" style="padding-bottom:clamp(20px,3vw,32px)">
   <div class="wrap hero-grid">
     <div>
       <span class="eyebrow">For local businesses</span>
       <h1 id="h1">We Help Local Businesses Get Seen</h1>
       <p class="lead">At The LIST Ann Arbor, we feature and promote locally owned businesses to help spread awareness throughout the community. Our growing audience of followers and email subscribers actively supports local businesses and loves discovering new places around Ann Arbor.</p>
-      <p>When we feature a business, we come out to create content, highlight your story, and run a giveaway connected to your business valued at $50 or more. That could be a gift card, a service, a product, or an experience.</p>
-      <p>If you're interested in being featured, fill out the form below and our team will reach out if your business is a good fit.</p>
-      <p class="hero-ctas"><a class="btn" href="#apply">Sign my business up!</a></p>
+      <p class="lead">When we feature a business, we come out to create content, highlight your story, and run a giveaway connected to your business valued at $50 or more. That could be a gift card, a service, a product, or an experience.</p>
+      <p class="lead">If you're interested in being featured, fill out the form below and our team will reach out if your business is a good fit.</p>
+      <p class="hero-ctas"><a class="btn" href="#apply">Submit my business</a></p>
     </div>
-    <div class="logo-panel reveal" aria-hidden="true">
-      <img class="logo" src="assets/img/the-list-logo-navy-560.webp" width="560" height="335" alt="">
-      <img class="drawing" src="assets/img/ann-arbor-drawing-900.webp" width="900" height="327" alt="" loading="lazy">
-    </div>
+    <figure class="hero-art reveal">
+      <img src="assets/img/for-businesses-hero.webp" width="2000" height="2000" alt="The LIST Ann Arbor illustration of the Michigan and State theaters">
+    </figure>
+  </div>
+</section>
+
+<section class="as-seen" aria-label="As seen in">
+  <div class="wrap as-seen-row">
+    <p class="as-seen-label">As seen in</p>
+    <a href="https://annarborobserver.com/the-list-is-a-launchpad/" target="_blank" rel="noopener"><img src="assets/img/ann-arbor-observer.webp" width="1773" height="228" alt="Ann Arbor Observer"></a>
   </div>
 </section>
 
@@ -77,8 +83,10 @@
   <div class="form-body">
     <h2>Tell us about your business</h2>
     <p class="form-intro">Fill out the form and our team will reach out if your business is a good fit.</p>
-    <!-- LEAD FORM (business interest). Fields match The LIST's existing business interest list.
-         PREVIEW: no action, nothing posts. At launch site.js sends this to the GHL webhook (LEAD_WEBHOOK_URL). -->
+    <!-- LEAD FORM (business interest). PREVIEW: no action, nothing posts.
+         At launch site.js sends this to the GHL webhook (LEAD_WEBHOOK_URL).
+         Payload keys: name, business_name, phone, email, website, instagram,
+         marketing_decisions, giveaway, source. -->
     <form data-lead-form="business" autocomplete="on">
       <input type="hidden" name="source" value="website-business-interest">
       <div class="hp" aria-hidden="true"><label>Company <input type="text" name="hp_company" tabindex="-1" autocomplete="off"></label></div>
@@ -87,11 +95,23 @@
         <div class="field"><label for="b-biz">Business name</label><input id="b-biz" name="business_name" type="text" autocomplete="organization" required></div>
         <div class="field"><label for="b-phone">Phone</label><input id="b-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required></div>
         <div class="field"><label for="b-email">Email</label><input id="b-email" name="email" type="email" autocomplete="email" inputmode="email" required></div>
-        <div class="field full"><label for="b-addr">Business address <span class="opt">(optional)</span></label><input id="b-addr" name="business_address" type="text" autocomplete="street-address"></div>
         <div class="field"><label for="b-web">Website <span class="opt">(optional)</span></label><input id="b-web" name="website" type="text" inputmode="url" autocomplete="url" placeholder="yourbusiness.com"></div>
         <div class="field"><label for="b-ig">Instagram <span class="opt">(optional)</span></label><input id="b-ig" name="instagram" type="text" autocomplete="off" placeholder="@yourbusiness"></div>
+        <fieldset class="field full choice">
+          <legend>Do you make the marketing decisions for your business, including social media?</legend>
+          <p class="help" id="b-mkt-help">Franchise and corporate locations may need approval first.</p>
+          <div class="choices">
+            <label><input type="radio" name="marketing_decisions" value="Yes" required aria-describedby="b-mkt-help"> Yes</label>
+            <label><input type="radio" name="marketing_decisions" value="No"> No</label>
+          </div>
+        </fieldset>
+        <div class="field full">
+          <label for="b-give">What would you like to give away to our followers?</label>
+          <p class="help" id="b-give-help">Our giveaways are valued at $50 or more.</p>
+          <textarea id="b-give" name="giveaway" rows="3" required placeholder="e.g. $50 gift card, free class, product bundle" aria-describedby="b-give-help"></textarea>
+        </div>
       </div>
-      <div class="form-actions"><button class="btn" type="submit">Sign my business up!</button></div>
+      <div class="form-actions"><button class="btn" type="submit">Submit my business</button></div>
       <p class="fine">We will only use these details to talk with you about a feature. See our <a href="privacy.html">privacy notice</a>.</p>
     </form>
   </div>
@@ -105,10 +125,9 @@
   </div>
 </section>
 
-<section class="section band-hi" aria-label="What business owners say">
-  <!-- Testimonial from Ashley's mockup (Jenn, Kind Laser Skin and Wellness). Confirm permission before launch. -->
+<section class="section band-hi" aria-label="What subscribers say">
   <div class="wrap">
-    <figure class="quote quote-solo reveal"><blockquote><p>Y'all are so wonderful and your commitment to helping other small businesses in the community is amazing.</p></blockquote><figcaption>Jenn, Kind Laser Skin and Wellness</figcaption></figure>
+    <figure class="quote quote-solo reveal"><blockquote><p>The List is great for hearing about new or old places you might have forgotten and incentivizing to try places. I discovered Curb Crew Auto from your page!</p></blockquote><figcaption>Kar</figcaption></figure>
   </div>
 </section>
 </main>

@@ -12,8 +12,8 @@
        https://services.leadconnectorhq.com/hooks/<LOCATION_ID>/webhook-trigger/<TRIGGER_ID>
      and it is set here. Payload keys sent (JSON):
        consumer : first_name, last_name, email, source=website-signup
-       business : name, business_name, phone, email, business_address,
-                  website, instagram, source=website-business-interest
+       business : name, business_name, phone, email, website, instagram,
+                  marketing_decisions, giveaway, source=website-business-interest
      ===================================================================== */
   var LEAD_WEBHOOK_URL = ""; // TODO(GHL Ops): set at launch. Leave empty in preview.
 
