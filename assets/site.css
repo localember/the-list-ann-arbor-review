@@ -95,6 +95,7 @@ p{margin:0 0 1em}
 .field input:user-invalid{border-color:#B3261E}
 .form-actions{margin-top:18px}
 .form-actions .btn{width:100%}
+.form-actions .claim-note{margin:10px 0 0;font-size:14px;line-height:1.45;color:var(--ink);text-align:center}
 .fine{font-size:13.5px;color:var(--muted);margin:14px 0 0;line-height:1.5}
 .hp{position:absolute;left:-5000px;width:1px;height:1px;overflow:hidden}
 .form-success{display:none;text-align:center;padding:12px 4px}
