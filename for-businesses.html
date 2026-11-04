@@ -85,9 +85,10 @@
     <p class="form-intro">Fill out the form and our team will reach out if your business is a good fit.</p>
     <!-- LEAD FORM (business interest). PREVIEW: no action, nothing posts.
          At launch site.js sends this to the GHL webhook (LEAD_WEBHOOK_URL).
+         Form notification address (Ashley, 2026-11-04): giveaway@thelistannarbor.com
          Payload keys: name, business_name, phone, email, website, instagram,
          marketing_decisions, giveaway, source. -->
-    <form data-lead-form="business" autocomplete="on">
+    <form data-lead-form="business" data-notify-email="giveaway@thelistannarbor.com" autocomplete="on">
       <input type="hidden" name="source" value="website-business-interest">
       <div class="hp" aria-hidden="true"><label>Company <input type="text" name="hp_company" tabindex="-1" autocomplete="off"></label></div>
       <div class="form-grid">
@@ -113,6 +114,7 @@
       </div>
       <div class="form-actions"><button class="btn" type="submit">Submit my business</button></div>
       <p class="fine">We will only use these details to talk with you about a feature. See our <a href="privacy.html">privacy notice</a>.</p>
+      <p class="fine">Business inquiries: <a href="mailto:giveaway@thelistannarbor.com">giveaway@thelistannarbor.com</a></p>
     </form>
   </div>
   <div class="form-success" role="status" aria-live="polite">
@@ -125,9 +127,9 @@
   </div>
 </section>
 
-<section class="section band-hi" aria-label="What subscribers say">
+<section class="section band-hi" aria-label="What business owners say">
   <div class="wrap">
-    <figure class="quote quote-solo reveal"><blockquote><p>The List is great for hearing about new or old places you might have forgotten and incentivizing to try places. I discovered Curb Crew Auto from your page!</p></blockquote><figcaption>Kar</figcaption></figure>
+    <figure class="quote quote-solo reveal"><blockquote><p>Y'all are so wonderful and your commitment to helping other small businesses in the community is amazing.</p></blockquote><figcaption>Jenn — Kind Laser Skin and Wellness</figcaption></figure>
   </div>
 </section>
 </main>
@@ -141,6 +143,7 @@
           <li><a href="https://www.facebook.com/profile.php?id=61572374563924" target="_blank" rel="noopener noreferrer" aria-label="The LIST Ann Arbor on Facebook"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M13.5 22v-8h2.7l.4-3.2h-3.1V8.8c0-.9.3-1.6 1.6-1.6h1.7V4.4c-.3 0-1.3-.1-2.5-.1-2.5 0-4.1 1.5-4.1 4.2v2.3H7.4V14h2.8v8z"/></svg></a></li>
           <li><a href="https://www.instagram.com/thelist_annarbor/" target="_blank" rel="noopener noreferrer" aria-label="The LIST Ann Arbor on Instagram"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.4" cy="6.6" r="1.3" fill="currentColor"/></svg></a></li>
         </ul>
+        <p><a href="mailto:giveaway@thelistannarbor.com">giveaway@thelistannarbor.com</a></p>
       </div>
       <div>
         <h2>Explore</h2>
@@ -157,7 +160,6 @@
           <li><a href="how-the-list-works.html#rules">Giveaway Rules</a></li>
           <li><a href="privacy.html">Privacy (draft)</a></li>
         </ul>
-        <!-- PLACEHOLDER: a contact email goes here once The LIST provides it. -->
       </div>
     </div>
     <div class="foot-bottom">
